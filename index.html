@@ -31,24 +31,30 @@
     </div>
 
     <input type="text" id="screen" value="" readonly>
-
     <div class="operator">
 
-      <button onclick="appendtodisplay('+')">+</button>
-      <button onclick="appendtodisplay('-')">-</button>
-      <button onclick="appendtodisplay('/')">/</button>
-      <button onclick="appendtodisplay('*')">*</button>
+  <button onclick="appendtodisplay('+')">+</button>
+  <button onclick="appendtodisplay('-')">-</button>
+  <button onclick="appendtodisplay('/')">/</button>
+  <button onclick="appendtodisplay('*')">*</button>
 
-      <!-- Modulus -->
-      <button onclick="appendtodisplay('%')">%</button>
+  <!-- Brackets -->
+  <button onclick="appendtodisplay('(')">(</button>
+  <button onclick="appendtodisplay(')')">)</button>
 
-      <!-- Exponential -->
-      <button onclick="appendtodisplay('^')">EXP</button>
+  <!-- Modulus -->
+  <button onclick="appendtodisplay('%')">%</button>
 
-      <!-- Clear -->
-      <button onclick="clearDisplay()">C</button>
+  <!-- Exponential -->
+  <button onclick="appendtodisplay('^')">EXP</button>
 
-    </div>
+  <!-- Decimal -->
+  <button onclick="appendtodisplay('.')">.</button>
+
+  <!-- Clear -->
+  <button onclick="clearDisplay()">C</button>
+
+</div>
 
   </div>
 
