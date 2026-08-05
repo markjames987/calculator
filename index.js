@@ -25,9 +25,9 @@ function calculate() {
     // MODULUS %
     // =========================
 
-    if (expression.includes("%")) {
+    if (expression.includes("MOD")) {
 
-        let numbers = expression.split("%");
+        let numbers = expression.split("MOD");
 
         let a = Number(numbers[0]);
         let b = Number(numbers[1]);

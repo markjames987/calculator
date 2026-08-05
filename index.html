@@ -13,6 +13,7 @@
 
     <div id="keys">
 
+
       <button onclick="appendtodisplay('0')">0</button>
       <button onclick="appendtodisplay('3')">3</button>
       <button onclick="appendtodisplay('6')">6</button>
@@ -34,19 +35,21 @@
 
     <div class="operator">
 
-      <button onclick="appendtodisplay('+')">+</button>
-      <button onclick="appendtodisplay('-')">-</button>
-      <button onclick="appendtodisplay('/')">/</button>
-      <button onclick="appendtodisplay('*')">*</button>
+      <!-- operators -->
+
+      <button onclick="appendtodisplay('+')" class="operator-btn">+</button>
+      <button onclick="appendtodisplay('-')" class="operator-btn">-</button>
+      <button onclick="appendtodisplay('/')" class="operator-btn">/</button>
+      <button onclick="appendtodisplay('*')" class="operator-btn">*</button>
 
       <!-- Modulus -->
-      <button onclick="appendtodisplay('%')">%</button>
+      <button onclick="appendtodisplay('MOD')" class="operator-btn">MOD</button>
 
       <!-- Exponential -->
-      <button onclick="appendtodisplay('^')">EXP</button>
+      <button onclick="appendtodisplay('^')" class="operator-btn">EXP</button>
 
       <!-- Clear -->
-      <button onclick="clearDisplay()">C</button>
+      <button onclick="clearDisplay()" class="operator-btn">C</button>
 
     </div>
 
