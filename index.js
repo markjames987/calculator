@@ -57,145 +57,145 @@ function evaluateExpression(expression) {
     return evaluateSimple(expression);
 }
 
-// =========================
-// Evaluate Without Brackets
-// =========================
+// // =========================
+// // Evaluate Without Brackets
+// // =========================
 
-function evaluateSimple(expression) {
+// function evaluateSimple(expression) {
 
-    // Split expression into numbers/operators
-    let tokens = expression.match(/(\d*\.?\d+|[+\-*/%^])/g);
+//     // Split expression into numbers/operators
+//     let tokens = expression.match(/(\d*\.?\d+|[+\-*/%^])/g);
 
-    if (!tokens)
-        throw "Invalid";
+//     if (!tokens)
+//         throw "Invalid";
 
-    // -------------------------
-    // Handle negative numbers
-    // -------------------------
+//     // -------------------------
+//     // Handle negative numbers
+//     // -------------------------
 
-    for (let i = 0; i < tokens.length; i++) {
+//     for (let i = 0; i < tokens.length; i++) {
 
-        if (
-            tokens[i] === "-" &&
-            (i === 0 || ["+","-","*","/","%","^"].includes(tokens[i-1]))
-        ) {
+//         if (
+//             tokens[i] === "-" &&
+//             (i === 0 || ["+","-","*","/","%","^"].includes(tokens[i-1]))
+//         ) {
 
-            let negative = (-parseFloat(tokens[i+1])).toString();
+//             let negative = (-parseFloat(tokens[i+1])).toString();
 
-            tokens.splice(i,2,negative);
-        }
-    }
+//             tokens.splice(i,2,negative);
+//         }
+//     }
 
-    // =========================
-    // EXPONENT (^)
-    // =========================
+//     // =========================
+//     // EXPONENT (^)
+//     // =========================
 
-    let i = 0;
+//     let i = 0;
 
-    while(i < tokens.length){
+//     while(i < tokens.length){
 
-        if(tokens[i] === "^"){
+//         if(tokens[i] === "^"){
 
-            let base = parseFloat(tokens[i-1]);
-            let exponent = parseInt(tokens[i+1]);
+//             let base = parseFloat(tokens[i-1]);
+//             let exponent = parseInt(tokens[i+1]);
 
-            let result = 1;
+//             let result = 1;
 
-            if(exponent >= 0){
+//             if(exponent >= 0){
 
-                for(let j=0; j<exponent; j++){
-                    result *= base;
-                }
+//                 for(let j=0; j<exponent; j++){
+//                     result *= base;
+//                 }
 
-            }else{
+//             }else{
 
-                for(let j=0; j<Math.abs(exponent); j++){
-                    result *= base;
-                }
+//                 for(let j=0; j<Math.abs(exponent); j++){
+//                     result *= base;
+//                 }
 
-                result = 1/result;
-            }
+//                 result = 1/result;
+//             }
 
-            tokens.splice(i-1,3,result.toString());
+//             tokens.splice(i-1,3,result.toString());
 
-            i = 0;
-        }
+//             i = 0;
+//         }
 
-        else{
-            i++;
-        }
-    }
+//         else{
+//             i++;
+//         }
+//     }
 
-    // =========================
-    // MULTIPLY DIVIDE MODULUS
-    // =========================
+//     // =========================
+//     // MULTIPLY DIVIDE MODULUS
+//     // =========================
 
-    i = 0;
+//     i = 0;
 
-    while(i < tokens.length){
+//     while(i < tokens.length){
 
-        if(
-            tokens[i] == "*" ||
-            tokens[i] == "/" ||
-            tokens[i] == "%"
-        ){
+//         if(
+//             tokens[i] == "*" ||
+//             tokens[i] == "/" ||
+//             tokens[i] == "%"
+//         ){
 
-            let left = parseFloat(tokens[i-1]);
-            let right = parseFloat(tokens[i+1]);
+//             let left = parseFloat(tokens[i-1]);
+//             let right = parseFloat(tokens[i+1]);
 
-            let result;
+//             let result;
 
-            if(tokens[i] == "*")
-                result = left * right;
+//             if(tokens[i] == "*")
+//                 result = left * right;
 
-            else if(tokens[i] == "/"){
+//             else if(tokens[i] == "/"){
 
-                if(right == 0)
-                    throw "Divide by zero";
+//                 if(right == 0)
+//                     throw "Divide by zero";
 
-                result = left / right;
-            }
+//                 result = left / right;
+//             }
 
-            else{
+//             else{
 
-                if(right == 0)
-                    throw "Divide by zero";
+//                 if(right == 0)
+//                     throw "Divide by zero";
 
-                result = left % right;
-            }
+//                 result = left % right;
+//             }
 
-            tokens.splice(i-1,3,result.toString());
+//             tokens.splice(i-1,3,result.toString());
 
-            i = 0;
-        }
+//             i = 0;
+//         }
 
-        else{
-            i++;
-        }
-    }
+//         else{
+//             i++;
+//         }
+//     }
 
-    // =========================
-    // ADDITION & SUBTRACTION
-    // =========================
+//     // =========================
+//     // ADDITION & SUBTRACTION
+//     // =========================
 
-    let answer = parseFloat(tokens[0]);
+//     let answer = parseFloat(tokens[0]);
 
-    i = 1;
+//     i = 1;
 
-    while(i < tokens.length){
+//     while(i < tokens.length){
 
-        let operator = tokens[i];
+//         let operator = tokens[i];
 
-        let number = parseFloat(tokens[i+1]);
+//         let number = parseFloat(tokens[i+1]);
 
-        if(operator == "+")
-            answer += number;
+//         if(operator == "+")
+//             answer += number;
 
-        else if(operator == "-")
-            answer -= number;
+//         else if(operator == "-")
+//             answer -= number;
 
-        i += 2;
-    }
+//         i += 2;
+//     }
 
-    return answer;
-}
+//     return answer;
+// }
