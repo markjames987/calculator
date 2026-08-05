@@ -61,11 +61,21 @@ button:active{
   background: #33c759;
 }
 .operator {
-    font-size: 45px;
     padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 4, 70px;
-    gap: 14px;
+    grid-template-columns: 7, 1fr;
+    gap: 10px;
+}
+.operator-btn {
+  background-color: hsl(35, 100%, 55%);
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+}
+.operator-btn:hover {
+  background-color: hsl(35, 100%, 65%);
+}
+.operator-btn:active {
+  background-color: hsl(35, 100%, 75%);
 }
