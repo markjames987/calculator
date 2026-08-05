@@ -9,10 +9,6 @@ function appendtodisplay(value) {
 }
 
 
-// Clear the screen
-function clearDisplay() {
-    screen.value = "";
-}
 
 
 // Calculate
