@@ -1,201 +1,130 @@
-// =========================
-// Calculator Program
-// =========================
 
+// Get the calculator screen
 const screen = document.getElementById("screen");
 
+
+// Add numbers and operators to the screen
 function appendtodisplay(value) {
     screen.value += value;
 }
 
+
+// Clear the screen
 function clearDisplay() {
     screen.value = "";
 }
 
+
+// Calculate
 function calculate() {
-    try {
-        let result = evaluateExpression(screen.value);
 
-        // Remove floating point errors
-        screen.value = parseFloat(result.toFixed(10));
-    }
-    catch {
-        screen.value = "Error";
-    }
-}
+    let expression = screen.value;
 
-// =========================
-// Evaluate Expression
-// =========================
 
-function evaluateExpression(expression) {
-
-    expression = expression.replace(/\s+/g, "");
+    // =========================
+    // MODULUS %
+    // =========================
 
     if (expression.includes("MOD")) {
 
         let numbers = expression.split("MOD");
-    // Solve brackets first
-    while (expression.includes("(")) {
 
-        let open = expression.lastIndexOf("(");
-        let close = expression.indexOf(")", open);
+        let a = Number(numbers[0]);
+        let b = Number(numbers[1]);
 
-        if (close === -1)
-            throw "Bracket Error";
+        if (b === 0) {
+            screen.value = "Error";
+            return;
+        }
 
-        let inside = expression.substring(open + 1, close);
-
-        let answer = evaluateSimple(inside);
-
-        expression =
-            expression.substring(0, open) +
-            answer +
-            expression.substring(close + 1);
+        screen.value = a % b;
     }
 
-    return evaluateSimple(expression);
+
+    // =========================
+    // EXPONENT ^
+    // =========================
+
+    else if (expression.includes("^")) {
+
+        let numbers = expression.split("^");
+
+        let a = Number(numbers[0]);
+        let b = Number(numbers[1]);
+
+        let result = 1;
+
+        // Calculate a^b without Math.pow()
+        for (let i = 0; i < b; i++) {
+            result = result * a;
+        }
+
+        screen.value = result;
+    }
+
+
+    // =========================
+    // ADDITION
+    // =========================
+
+    else if (expression.includes("+")) {
+
+        let numbers = expression.split("+");
+
+        let a = Number(numbers[0]);
+        let b = Number(numbers[1]);
+
+        screen.value = a + b;
+    }
+
+
+    // =========================
+    // SUBTRACTION
+    // =========================
+
+    else if (expression.includes("-")) {
+
+        let numbers = expression.split("-");
+
+        let a = Number(numbers[0]);
+        let b = Number(numbers[1]);
+
+        screen.value = a - b;
+    }
+
+
+    // =========================
+    // MULTIPLICATION
+    // =========================
+
+    else if (expression.includes("*")) {
+
+        let numbers = expression.split("*");
+
+        let a = Number(numbers[0]);
+        let b = Number(numbers[1]);
+
+        screen.value = a * b;
+    }
+
+
+    // =========================
+    // DIVISION
+    // =========================
+
+    else if (expression.includes("/")) {
+
+        let numbers = expression.split("/");
+
+        let a = Number(numbers[0]);
+        let b = Number(numbers[1]);
+
+        if (b === 0) {
+            screen.value = "Error";
+            return;
+        }
+
+        screen.value = a / b;
+    }
 }
 
-// // =========================
-// // Evaluate Without Brackets
-// // =========================
-
-// function evaluateSimple(expression) {
-
-//     // Split expression into numbers/operators
-//     let tokens = expression.match(/(\d*\.?\d+|[+\-*/%^])/g);
-
-//     if (!tokens)
-//         throw "Invalid";
-
-//     // -------------------------
-//     // Handle negative numbers
-//     // -------------------------
-
-//     for (let i = 0; i < tokens.length; i++) {
-
-//         if (
-//             tokens[i] === "-" &&
-//             (i === 0 || ["+","-","*","/","%","^"].includes(tokens[i-1]))
-//         ) {
-
-//             let negative = (-parseFloat(tokens[i+1])).toString();
-
-//             tokens.splice(i,2,negative);
-//         }
-//     }
-
-//     // =========================
-//     // EXPONENT (^)
-//     // =========================
-
-//     let i = 0;
-
-//     while(i < tokens.length){
-
-//         if(tokens[i] === "^"){
-
-//             let base = parseFloat(tokens[i-1]);
-//             let exponent = parseInt(tokens[i+1]);
-
-//             let result = 1;
-
-//             if(exponent >= 0){
-
-//                 for(let j=0; j<exponent; j++){
-//                     result *= base;
-//                 }
-
-//             }else{
-
-//                 for(let j=0; j<Math.abs(exponent); j++){
-//                     result *= base;
-//                 }
-
-//                 result = 1/result;
-//             }
-
-//             tokens.splice(i-1,3,result.toString());
-
-//             i = 0;
-//         }
-
-//         else{
-//             i++;
-//         }
-//     }
-
-//     // =========================
-//     // MULTIPLY DIVIDE MODULUS
-//     // =========================
-
-//     i = 0;
-
-//     while(i < tokens.length){
-
-//         if(
-//             tokens[i] == "*" ||
-//             tokens[i] == "/" ||
-//             tokens[i] == "%"
-//         ){
-
-//             let left = parseFloat(tokens[i-1]);
-//             let right = parseFloat(tokens[i+1]);
-
-//             let result;
-
-//             if(tokens[i] == "*")
-//                 result = left * right;
-
-//             else if(tokens[i] == "/"){
-
-//                 if(right == 0)
-//                     throw "Divide by zero";
-
-//                 result = left / right;
-//             }
-
-//             else{
-
-//                 if(right == 0)
-//                     throw "Divide by zero";
-
-//                 result = left % right;
-//             }
-
-//             tokens.splice(i-1,3,result.toString());
-
-//             i = 0;
-//         }
-
-//         else{
-//             i++;
-//         }
-//     }
-
-//     // =========================
-//     // ADDITION & SUBTRACTION
-//     // =========================
-
-//     let answer = parseFloat(tokens[0]);
-
-//     i = 1;
-
-//     while(i < tokens.length){
-
-//         let operator = tokens[i];
-
-//         let number = parseFloat(tokens[i+1]);
-
-//         if(operator == "+")
-//             answer += number;
-
-//         else if(operator == "-")
-//             answer -= number;
-
-//         i += 2;
-//     }
-
-//     return answer;
-// }
