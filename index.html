@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
+  <title>calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <div id="calculator">
 
     <div id="keys">
+
 
       <button onclick="appendtodisplay('0')">0</button>
       <button onclick="appendtodisplay('3')">3</button>
@@ -33,28 +33,25 @@
     <input type="text" id="screen" value="" readonly>
     <div class="operator">
 
+      <!-- operators -->
+
   <button onclick="appendtodisplay('+')">+</button>
   <button onclick="appendtodisplay('-')">-</button>
   <button onclick="appendtodisplay('/')">/</button>
   <button onclick="appendtodisplay('*')">*</button>
 
-  <!-- Brackets -->
-  <button onclick="appendtodisplay('(')">(</button>
-  <button onclick="appendtodisplay(')')">)</button>
 
   <!-- Modulus -->
-  <button onclick="appendtodisplay('%')">%</button>
+  <button onclick="appendtodisplay('MOD')">MOD</button>
 
   <!-- Exponential -->
   <button onclick="appendtodisplay('^')">EXP</button>
 
-  <!-- Decimal -->
-  <button onclick="appendtodisplay('.')">.</button>
-
-  <!-- Clear -->
-  <button onclick="clearDisplay()">C</button>
 
 </div>
+
+    
+    </div>
 
   </div>
 
