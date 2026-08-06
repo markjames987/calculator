@@ -12,6 +12,7 @@
 
     <div id="keys">
 
+
       <button onclick="appendtodisplay('0')">0</button>
       <button onclick="appendtodisplay('3')">3</button>
       <button onclick="appendtodisplay('6')">6</button>
@@ -30,12 +31,25 @@
     </div>
 
     <input type="text" id="screen" value="" readonly>
-
     <div class="operator">
-      <button onclick="appendtodisplay('+')">+</button>
-      <button onclick="appendtodisplay('-')">-</button>
-      <button onclick="appendtodisplay('/')">/</button>
-      <button onclick="appendtodisplay('*')">*</button>
+
+      <!-- operators -->
+
+  <button onclick="appendtodisplay('+')">+</button>
+  <button onclick="appendtodisplay('-')">-</button>
+  <button onclick="appendtodisplay('/')">/</button>
+  <button onclick="appendtodisplay('*')">*</button>
+
+
+  <!-- Modulus -->
+  <button onclick="appendtodisplay('MOD')">MOD</button>
+
+  <!-- Exponential -->
+  <button onclick="appendtodisplay('^')">EXP</button>
+
+
+</div>
+
     
     </div>
 
