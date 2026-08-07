@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=-device-width, initial-scale=1.0">--
+    <title>calculator</title>
+    <link  rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div id="display">
+                        <div class="buttons">
+                <!--row 1-->
+            <button onclick="appendvalue('0')">0</button>
+            <button onclick="appendvalue('3')">3</button>
+             <button onclick="appendvalue('6')">6</button>
+              <button onclick="appendvalue('9')">9</button>
+            
+              <!--row 2-->
+            <button onclick="appendvalue('1')">1</button>   
+             <button onclick="appendvalue('4')">4</button> 
+             <button onclick="appendvalue('7')">7</button> 
+             <button   class="equal" onclick="calculate()">=</button> 
+         
+             <!--row 3-->
+            <button onclick="appendvalue('2')">2</button> 
+            <button onclick="appendvalue('5')">5</button> 
+             <button onclick="appendvalue('8')">8</button> 
+             <input type="text" id="display" readonly>
+                        </div>
+
+        <div  class="operators">
+            <!--row 4-->
+            
+             <button onclick="appendvalue('+')">+</button>
+              <button onclick="appendvalue('-')">-</button>
+              <button onclick="appendvalue('/')">/</button>
+              <button onclick="appendvalue('*')">*</button>
+        </div>
+                         
+        </div>
+    </div>
+    <div class="my_class"></div>
+    <script  src="script.js"></script>
+    
+</body>
+</html>

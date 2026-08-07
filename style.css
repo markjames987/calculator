@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'segoe ui', Roboto,sytem-ui,-apple-system,sans-serif;
+    user-select:none;
+}
+body{
+    padding: 16px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+ 
+.calculator{
+    height: 520px;
+    width: 400px;
+    background:#14141e;
+    border-radius: 44px  44px 32px 32px;
+    padding: 60px 160px  40px;
+    box-shadow: 0 20px  40px rgba(0,0,0,.3);
+}
+#display{
+    margin-bottom: 28px;
+    text-align: center;
+    padding: 14px 18px 10px 18px;
+    border: 2px solid;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 50px;
+    height: 60px;
+    width: 300px;
+}
+.buttons{
+   min-height: 40px;
+    width: 30px;
+    display: grid; 
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 14px;
+   justify-content:center;
+    border:1px solid;
+    margin-bottom:4px;
+    padding:4px;
+    line-height: 1.4;
+    word-break: break-all;
+}
+.buttons  button{
+margin: 3px;
+padding:4px;
+    font-size: 28px;
+    font-weight:500;
+    cursor: pointer;
+    
+    border-radius:8px;
+    border: 2px solid #999; 
+    background: #bbb;
+    text-align: center;
+    justify-content:center;
+
+}
+.equal{
+    
+    grid-column: 4;
+    grid-row: 2 / span 2;
+}
+.operators{
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    justify-content: center;
+    gap: 15px;
+    margin-left: -140px;
+}
+.operators  button{
+    height: 70px;
+    font-size: 30px;
+    cursor: pointer;
+    background: #444;  
+    color: white; 
+}
+.my_class{
+    height:200px;
+    width:10px;
+    box-sizing: 1px;
+    background:fixed;
+    background-color:#fff;
+    display:flex;
+}
