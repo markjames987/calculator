@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines the character encoding used by the webpage -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on phones, tablets and computers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed on the browser tab -->
+    <title> Task - Scientific Calculator</title>
+
+    <!-- Connects this HTML file to the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main container for the entire webpage -->
+    <div class="container">
+
+        <!-- PAGE HEADER -->
+
+        <header>
+            <h1>Scientific Calculator</h1>
+
+            <p class="subtitle">
+                Daily Development Task - August 1, 2026
+            </p>
+        </header>
+
+
+        <!-- TASK DESCRIPTION -->
+
+        <section class="card">
+
+            <h2>1. Modulus & Exponentiation</h2>
+
+            <h3>
+                Development and Improvement of a Scientific Calculator
+            </h3>
+
+            <p>
+                The task was to develop and improve a calculator using
+                HTML, CSS and JavaScript. The calculator performs basic
+                arithmetic operations as well as modulus and exponent
+                calculations.
+            </p>
+
+        </section>
+
+ 
+        <!-- ALGORITHM -->
+
+        <section class="card">
+
+            <h2>2. Algorithm</h2>
+
+            <p>
+                The following steps describe the process used to solve
+                the calculator task:
+            </p>
+
+            <ol>
+
+                <li>
+                    The user enter two numbers and select either the <strong>MOD</strong> or <strong>EXP</strong> button.
+                </li>
+
+                <li>
+                    The calculator stores the expression entered by the user.
+                </li>
+
+                <li>
+                    When the = button is clicked, the <strong>calculate()</strong> function is executed.
+                </li>
+
+                <li>
+                    The program checks whether the expression contains <strong>MOD</strong>.
+                </li>
+
+                <li>
+                    if <strong>MOD</strong> is found, the expression is split into two numbers using the <strong>Number()</strong> function.
+                </li>
+
+                <li>
+                    The two values are converted from text into number using the <strong>Number()</strong> function.
+                </li>
+
+                <li>
+                    The program checks whether the section number is zero. if is zero, it displays <strong>"Error"</strong> because modulus by zero is not allow.
+                </li>
+
+                <li>
+                    if the second number is not zero, the program calculates the remainder using the <strong>MOD</strong> operator and displays the answer on the calculator screen.
+                </li>
+
+                <li>
+                    if the expression does not contain <strong>MOD,</strong> the program checks whether it conatins the exponents symbol <strong>^</strong>.
+                </li>
+
+                <li>
+                    if the <strong>^</strong> symbol is not found, the expression is split into two numbers.
+                </li>
+
+                <li>
+                    The two values are converted into numbers using the <strong>Number()</strong> function.
+                </li>
+
+                <li>
+                    The variable result is initialized to <strong>1</strong>.
+                </li>
+
+                <li>
+                    A for loop multiplies the base by itself repeatedly according to the exponent entered by the user.
+                </li>
+
+                <li>
+                    After the loop finishes, the final result is displayed on the calculator screen.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- SCREENSHOT -->
+
+        <section class="card">
+
+            <h2>3. Screenshot of the Application</h2>
+
+            <p>
+                The image below shows the calculator application
+                developed during the task.
+            </p>
+
+            <div class="screenshot-container"
+            >
+                <img src="image/calcs.png" alt="Screenshot of the scientific calculator" />
+            </div>
+
+        </section>
+
+
+        <!-- CODE EXPLANATION -->
+
+        <section class="card">
+
+            <h2>4. Detailed Code Explanation</h2>
+
+            <h3>HTML</h3>
+
+            <p>
+                HTML was used to create the structure of the calculator.
+                It contains the calculator container, buttons, input
+                screen and operators.
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>DOCTYPE html:</strong>
+                    Defines the document as an HTML5 document.
+                </li>
+
+                <li>
+                    <strong>html:</strong>
+                    Contains the entire webpage.
+                </li>
+
+                <li>
+                    <strong>head:</strong>
+                    Contains information about the webpage.
+                </li>
+
+                <li>
+                    <strong>meta charset:</strong>
+                    Allows the webpage to correctly display characters.
+                </li>
+
+                <li>
+                    <strong>meta viewport:</strong>
+                    Makes the webpage responsive.
+                </li>
+
+                <li>
+                    <strong>link:</strong>
+                    Connects the HTML file to the CSS stylesheet.
+                </li>
+
+                <li>
+                    <strong>body:</strong>
+                    Contains everything displayed on the webpage.
+                </li>
+
+                <li>
+                    <strong>button:</strong>
+                    Creates buttons that users can click.
+                </li>
+
+                <li>
+                    <strong>input:</strong>
+                    Creates the calculator display screen.
+                </li>
+
+            </ul>
+
+
+            <h3>CSS</h3>
+
+            <p>
+                CSS was used to improve the appearance and layout
+                of the calculator.
+            </p>
+
+            <ul>
+
+                <li>
+                    The calculator background was given a dark color.
+                </li>
+
+                <li>
+                    Buttons were given rounded shapes.
+                </li>
+
+                <li>
+                    Different colors were used to distinguish
+                    operators from number buttons.
+                </li>
+
+                <li>
+                    CSS Grid was used to arrange the calculator
+                    buttons.
+                </li>
+
+                <li>
+                    Padding and gaps were used to prevent buttons
+                    from touching each other.
+                </li>
+
+                <li>
+                    Hover and active effects were added to make
+                    the calculator interactive.
+                </li>
+
+            </ul>
+
+
+            <h3>JavaScript</h3>
+
+            <p>
+                JavaScript provides the functionality of the calculator.
+                It receives the values from the buttons and performs
+                the calculations.
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>getElementById()</strong>
+                    is used to access the calculator screen.
+                </li>
+
+                <li>
+                    <strong>appendtodisplay()</strong>
+                    adds numbers and operators to the display.
+                </li>
+
+                <li>
+                    <strong>clearDisplay()</strong>
+                    clears the calculator screen.
+                </li>
+
+                <li>
+                    <strong>calculate()</strong>
+                    determines which mathematical operation
+                    the user wants to perform.
+                </li>
+
+                <li>
+                    <strong>split()</strong>
+                    separates the two numbers in an expression.
+                </li>
+
+                <li>
+                    <strong>Number()</strong>
+                    converts text values into numbers.
+                </li>
+
+                <li>
+                    The modulus operator calculates the remainder.
+                </li>
+
+                <li>
+                    A <strong>for loop</strong> is used to calculate
+                    exponents without Math.pow().
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- CONCLUSION -->
+
+        <section class="card">
+
+            <h2>5. Conclusion</h2>
+
+            <p>
+                The scientific calculator was successfully developed
+                using HTML, CSS and JavaScript. The project helped
+                improve my understanding of JavaScript functions,
+                conditions, loops, operators and DOM manipulation.
+                The calculator was also improved by adding modulus
+                and exponent functionality and by improving the
+                arrangement of the buttons.
+            </p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Daily Development Task | August 1, 2026
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

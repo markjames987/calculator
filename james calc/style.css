@@ -1,0 +1,132 @@
+/* Remove the default spacing from the webpage */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* General webpage styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f5;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+
+/* Header */
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.subtitle {
+    font-size: 18px;
+}
+
+
+/* White content cards */
+.card {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.card h2 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+
+.card h3 {
+    margin: 15px 0;
+}
+
+
+/* Algorithm list */
+ol {
+    padding-left: 25px;
+}
+
+
+ol li {
+    margin-bottom: 10px;
+}
+
+
+/* Code explanation list */
+ul {
+    padding-left: 25px;
+}
+
+
+ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Screenshot container */
+.screenshot-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Application screenshot */
+.screenshot-container img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+}
