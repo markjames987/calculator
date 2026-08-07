@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combination and Simultaneous Equations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <p class="tag">MATHEMATICS CALCULATOR PROJECT</p>
+    <h1>Combination and Simultaneous Equations</h1>
+    <p class="subtitle">
+      A calculator for combinations and simultaneous equations.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Details of the Work</h2>
+      <p>
+        This work is a calculator built with HTML, CSS, and JavaScript.
+        It performs normal mathematical calculations and also solves
+        combinations and simultaneous equations.
+      </p>
+
+      <div class="cards">
+        <article>
+          <h3>Combination</h3>
+          <h4>definition</h4>
+          <P>Combination refers to the way of choosing numbers where others does not matter.</P>
+          <p>
+            The calculator calculates combinations using the nCr button.
+            For example, <strong>5C2 = 10</strong>.
+          </p>
+          <p class="formula">nCr = n! / [r! × (n − r)!]</p>
+        </article>
+
+        <article>
+          <h3>Simultaneous Equations</h3>
+          <h4>Definition</h4>
+          <p>simultaneous equation refer two or more equations hat that uses the same unknown value usualy x and y. <br> You solve them together to find the value that makes the equation true.</p>
+          <p>
+            The calculator finds the values of x and y from two equations.
+          </p>
+          <p class="formula">
+            a₁x + b₁y = c₁<br>
+            a₂x + b₂y = c₂
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Algorithm</h2>
+      <h4>Definition</h4>
+      <p>Refers to the step by step process use to solve a problem.</p>
+
+      <h3>Combination Algorithm</h3>
+      
+      <ol>
+        <li>Read the values before and after C.</li>
+        <li>Check whether n and r are valid.</li>
+        <li>Apply the nCr formula.</li>
+        <li>Display the answer on the calculator screen.</li>
+      </ol>
+
+      <h3>Simultaneous Equation Algorithm</h3>
+      <ol>
+        <li>Read a₁, b₁, c₁, a₂, b₂, and c₂.</li>
+        <li>Calculate: det = a₁b₂ − a₂b₁.</li>
+        <li>If det is 0, show no solution or infinite solutions.</li>
+        <li>Otherwise calculate x and y using Cramer’s rule.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Conception</h2>
+      <h3>Definition</h3>
+      <p>Concetion refers to the procedue taken to complete a task.</p>
+      <p>
+        HTML creates the calculator display, buttons, and equation form.
+        CSS Grid arranges the buttons into rows and columns. JavaScript
+        performs the calculations with functions such as
+        <code>combinationNum()</code> and
+        <code>solveSimultaneous()</code>.
+      </p>
+
+      <p class="note">
+        The calculator uses a dark background and a light screen so that the
+        calculation and answer are easy to read.
+      </p>
+    </section>
+
+    <section>
+      <h2>Screenshot of the Working Project</h2>
+
+      <!-- Change screenshot.png to the name of your calculator screenshot -->
+    
+        <div class="image-row">
+         <img src="Screenshot 2026-08-04 163957.png" alt="Calculator screenshot 1">
+         <img src="Screenshot 2026-08-05 060500.png" alt="Calculator screenshot 2">
+        </div>
+      <p class="caption">
+        The calculator can calculate 5C2 = 10 and solve simultaneous equations.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Combination and Simultaneous Equations Calculator Project
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
