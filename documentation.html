@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator History · Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="doc-style.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============================================================ -->
+        <!-- HEADER: CALCULATOR HISTORY at TOP                             -->
+        <!-- ============================================================ -->
+        <header class="main-header">
+            <div class="header-content">
+                <h1>
+                    <i class="fas fa-calculator"></i> 
+                    Calculator History Module
+                </h1>
+                <p class="header-sub">
+                    A fully functional calculator with complete history tracking system
+                </p>
+                <div class="header-badges">
+                    <span class="badge"><i class="fas fa-check-circle"></i> HTML5</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> CSS3</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> JavaScript</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> Git</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 1: WORKFLOW (Chronological)                          -->
+        <!-- ============================================================ -->
+        <section class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-route"></i> Project Workflow</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="section-intro">
+                The following steps outline my chronological approach to building this calculator:
+            </p>
+
+            <div class="workflow-timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Plan & Design</h3>
+                        <p>Designed the calculator layout and identified all required features: record, preview, retrieve, delete, and clear history. Created wireframes and planned the user interface.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Build the Calculator</h3>
+                        <p>Created the HTML structure with a clean display area and button grid. Styled the calculator using CSS with a modern, responsive design. Implemented basic arithmetic operations using JavaScript.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Add History Features</h3>
+                        <p>Implemented all history-related functions: Record (save calculations), Preview (view last calculation), Retrieve (bring back previous calculation), Delete (remove single entries), and Clear History (remove all entries).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3>Testing & Refinement</h3>
+                        <p>Thoroughly tested all features to ensure they work correctly. Fixed bugs and refined the user experience. Tested edge cases and error handling.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-content">
+                        <h3>Deployment to GitHub</h3>
+                        <p>Pushed the complete code to GitHub for sharing and collaboration. Created documentation to explain the features and functionality.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 2: FEATURES (Organized with lines)                   -->
+        <!-- ============================================================ -->
+        <section class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-list-check"></i> Calculator Features</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="section-intro">
+                The calculator includes the following essential features for tracking calculations:
+            </p>
+
+            <!-- FEATURE 1: RECORD -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-floppy-disk"></i></div>
+                <div class="feature-body">
+                    <h3>Record</h3>
+                    <p><strong>What it does:</strong> Saves the current expression and result into the history stack.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>When you press the <strong>"Record"</strong> button, the current expression is evaluated.</li>
+                            <li>Both the expression and result are stored in the history array.</li>
+                            <li>A timestamp is added to show when the calculation was recorded.</li>
+                            <li>The history list updates immediately.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Keep a permanent log of all calculations for later review.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> 12 + 34 = 46 → Click "Record" → Saved to history
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 2: PREVIEW -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-eye"></i></div>
+                <div class="feature-body">
+                    <h3>Preview</h3>
+                    <p><strong>What it does:</strong> Displays the last recorded calculation on the screen without saving it again.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>When you press the <strong>"Preview"</strong> button, the most recent history entry is retrieved.</li>
+                            <li>The expression appears in the display area.</li>
+                            <li>The result appears in the result area.</li>
+                            <li>Nothing is saved to history (no duplication).</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Quickly check previous calculations without adding duplicates to history.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> Click "Preview" → Shows "12 + 34 = 46" on screen
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 3: RETRIEVE -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-rotate-left"></i></div>
+                <div class="feature-body">
+                    <h3>Retrieve (Redrive)</h3>
+                    <p><strong>What it does:</strong> Restores a previous calculation from history back into the active display.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>When you press the <strong>"Retrieve"</strong> button, the last entry is removed from history.</li>
+                            <li>The expression is placed in the display area.</li>
+                            <li>The result appears in the result area.</li>
+                            <li>The entry is permanently removed from history.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Reuse past calculations or correct errors by retrieving them for editing.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> Click "Retrieve" → Brings back "12 + 34 = 46" for editing
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 4: CLEAR HISTORY -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-broom"></i></div>
+                <div class="feature-body">
+                    <h3>Clear History</h3>
+                    <p><strong>What it does:</strong> Permanently deletes all saved entries from the history stack.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>When you press the <strong>"Clear History"</strong> button, a confirmation dialog appears.</li>
+                            <li>If confirmed, the history array is completely emptied.</li>
+                            <li>The history list shows "No calculations recorded".</li>
+                            <li>A confirmation message appears: "✅ History cleared!"</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Reset the log for privacy or a fresh start with a clean history.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> Click "Clear History" → All entries removed → "History cleared!"
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 5: DELETE SINGLE -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-trash-can"></i></div>
+                <div class="feature-body">
+                    <h3>Delete (Single Entry)</h3>
+                    <p><strong>What it does:</strong> Removes one specific entry from the history list.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>Each history entry has a small <strong>X (delete)</strong> button.</li>
+                            <li>When clicked, that specific entry is removed.</li>
+                            <li>Other entries remain untouched.</li>
+                            <li>The history list updates immediately.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Remove unwanted or incorrect calculations individually without affecting others.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> Click X on "12 + 34 = 46" → Only that entry is removed
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 6: DELETE CHARACTER -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-backspace"></i></div>
+                <div class="feature-body">
+                    <h3>Delete (Character)</h3>
+                    <p><strong>What it does:</strong> Removes one character at a time from the current expression.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>When you press the <strong>"Del"</strong> button, the last character is removed.</li>
+                            <li>Each press removes one character.</li>
+                            <li>The display updates immediately.</li>
+                            <li>History is not affected.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Fix typing mistakes one character at a time without clearing everything.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> "123+" → Press Del → "123"
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE 7: CLEAR DISPLAY -->
+            <div class="feature-block">
+                <div class="feature-icon"><i class="fas fa-eraser"></i></div>
+                <div class="feature-body">
+                    <h3>Clear (Display)</h3>
+                    <p><strong>What it does:</strong> Clears the entire current expression at once.</p>
+                    <div class="feature-detail">
+                        <strong>How it functions:</strong>
+                        <ul>
+                            <li>When you press the <strong>"C"</strong> (Clear) button, the entire expression is removed.</li>
+                            <li>The display shows "0".</li>
+                            <li>History is not affected.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-purpose">
+                        <i class="fas fa-bullseye"></i> 
+                        <strong>Purpose:</strong> Quickly start a new calculation from scratch.
+                    </div>
+                    <div class="feature-example">
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Example:</strong> "123+456" → Press C → "0"
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 3: ALGORITHM                                         -->
+        <!-- ============================================================ -->
+        <section class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-code"></i> Algorithm</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="algorithm-grid">
+
+                <div class="algo-box">
+                    <h3><i class="fas fa-database"></i> Data Structure</h3>
+                    <pre>
+history = [
+    {
+        expression: "12 + 34",
+        result: 46,
+        timestamp: "2026-08-06 14:32:00"
+    }
+]</pre>
+                </div>
+
+                <div class="algo-box">
+                    <h3><i class="fas fa-gears"></i> Core Functions</h3>
+                    <ul>
+                        <li><strong>Record:</strong> <code>history.push({ expression, result, timestamp })</code></li>
+                        <li><strong>Preview:</strong> <code>last = history[history.length - 1]</code></li>
+                        <li><strong>Retrieve:</strong> <code>last = history.pop()</code></li>
+                        <li><strong>Clear History:</strong> <code>history = []</code></li>
+                        <li><strong>Delete (char):</strong> <code>expression.slice(0, -1)</code></li>
+                        <li><strong>Clear Display:</strong> <code>expression = ""</code></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        
+      
+<!-- SECTION 4: SCREENSHOTS (Multiple)                             -->
+<!-- ============================================================ -->
+<section class="section">
+    <div class="section-header">
+        <h2><i class="fas fa-camera"></i> Screenshots</h2>
+        <div class="section-line"></div>
+    </div>
+    <p class="section-intro">
+        Below are screenshots showing my calculator interface and history features.
+    </p>
+
+    <div class="screenshots-grid">
+        <div class="screenshot-item">
+            <img src="calculator-screenshot.png" alt="Calculator Interface" class="screenshot-image" />
+            <p class="screenshot-caption">
+                <i class="fas fa-image"></i> Figure 1: Calculator main interface
+            </p>
+        </div>
+        
+    </div>
+</section>
+                  
+        </section>
+
+       
+        <!-- FOOTER                                                       -->
+       
+        <footer>
+            <p>
+                <i class="fas fa-copyright"></i> 2026 Calculator History Module · 
+                Built with <i class="fas fa-heart" style="color:#c0392b;"></i> for clarity
+            </p>
+            <p class="footer-github">
+                <i class="fab fa-github"></i> 
+                <a href="https://github.com/matene389-alt/calculator-history" target="_blank">
+                    View on GitHub
+                </a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
