@@ -8,9 +8,6 @@ function appendtodisplay(value) {
     screen.value += value;
 }
 
-
-
-
 // Calculate
 function calculate() {
 
@@ -114,7 +111,6 @@ function calculate() {
 
         let a = Number(numbers[0]);
         let b = Number(numbers[1]);
-
 
         if (b === 0) {
             screen.value = "Error";
