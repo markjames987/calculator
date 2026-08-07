@@ -1,104 +1,83 @@
-
-// Get the calculator screen
 const screen = document.getElementById("screen");
 
-
-// Add numbers and operators to the screen
 function appendtodisplay(value) {
     screen.value += value;
 }
 
-
-
-
-// Calculate
 function calculate() {
+    try {
+        let expression = screen.value;
 
-    let expression = screen.value;
+        // Convert nrootm into root(n,m)
+        expression = expression.replace(
+            /(\d+(\.\d+)?)root(\d+(\.\d+)?)/gi,
+            "root($1,$3)"
+        );
 
+        let result = Function(
+            "root",
+            '"use strict"; return (' + expression + ');'
+        )(root);
 
-    // =========================
-    // MODULUS %
-    // =========================
-
-    if (expression.includes("MOD")) {
-
-        let numbers = expression.split("MOD");
-
-        let a = Number(numbers[0]);
-        let b = Number(numbers[1]);
-
-        if (b === 0) {
+        if (!isFinite(result)) {
             screen.value = "Error";
             return;
         }
 
-        screen.value = a % b;
-    }
-
-
-    // =========================
-    // EXPONENT ^
-    // =========================
-
-    else if (expression.includes("^")) {
-
-        let numbers = expression.split("^");
-
-        let a = Number(numbers[0]);
-        let b = Number(numbers[1]);
-
-        let result = 1;
-
-        // Calculate a^b without Math.pow()
-        for (let i = 0; i < b; i++) {
-            result = result * a;
+        if (result % 1 !== 0) {
+            result = Number(result.toFixed(3));
         }
 
         screen.value = result;
+
+    } catch {
+        screen.value = "Error";
+    }
+}
+
+function squareRoot() {
+    try {
+        let value = parseFloat(screen.value);
+
+        if (isNaN(value) || value < 0) {
+            screen.value = "Error";
+            return;
+        }
+
+        let result = Math.sqrt(value);
+
+        if (!Number.isInteger(result)) {
+            result = Number(result.toFixed(3));
+        }
+
+        screen.value = result;
+    } catch {
+        screen.value = "Error";
+    }
+}
+
+// Convert decimal to fraction
+function decimalToFraction() {
+    let value = parseFloat(screen.value);
+
+    if (isNaN(value)) {
+        screen.value = "Error";
+        return;
     }
 
-
-    // =========================
-    // ADDITION
-    // =========================
-
-    else if (expression.includes("+")) {
-
-        let numbers = expression.split("+");
-
-        let a = Number(numbers[0]);
-        let b = Number(numbers[1]);
-
-        screen.value = a + b;
+    // If already an integer
+    if (Number.isInteger(value)) {
+        screen.value = value + "/1";
+        return;
     }
 
+    let sign = value < 0 ? -1 : 1;
+    value = Math.abs(value);
 
-    // =========================
-    // SUBTRACTION
-    // =========================
+    // Convert up to 3 decimal places
+    let denominator = 1000;
+    let numerator = Math.round(value * denominator);
 
-    else if (expression.includes("-")) {
-
-        let numbers = expression.split("-");
-
-        let a = Number(numbers[0]);
-        let b = Number(numbers[1]);
-
-        screen.value = a - b;
-    }
-
-
-    // =========================
-    // MULTIPLICATION
-    // =========================
-
-    else if (expression.includes("*")) {
-
-        let numbers = expression.split("*");
-
-        let a = Number(numbers[0]);
-        let b = Number(numbers[1]);
 
         screen.value = a * b;
     }
@@ -232,4 +211,36 @@ function calculate() {
         const round = (n) => Math.round(n * 1000) / 1000;
         screen.value = `x=${round(x)}, y=${round(y)}`;
     }
+    // Find Greatest Common Divisor
+    function gcd(a, b) {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    let divisor = gcd(numerator, denominator);
+
+    numerator /= divisor;
+    denominator /= divisor;
+
+    if (sign < 0) {
+        numerator *= -1;
+    }
+
+    screen.value = `${numerator}/${denominator}`;
+}
+function root(index, number) {
+    if (index === 0) return NaN;
+
+    let guess = number / index;
+
+    for (let i = 0; i < 20; i++) {
+        guess = ((index - 1) * guess + number / (guess ** (index - 1))) / index;
+    }
+
+    return guess;
+}
 

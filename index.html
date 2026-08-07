@@ -12,7 +12,6 @@
     <div class="keys-wrapper">
     <div id="keys">
 
-
       <button onclick="appendtodisplay('0')">0</button>
       <button onclick="appendtodisplay('3')">3</button>
       <button onclick="appendtodisplay('6')">6</button>
@@ -50,14 +49,6 @@
   
 
     <input type="text" id="screen" value="" readonly>
-    <div class="operator">
-
-      <!-- operators -->
-
-  <button onclick="appendtodisplay('+')">+</button>
-  <button onclick="appendtodisplay('-')">-</button>
-  <button onclick="appendtodisplay('/')">/</button>
-  <button onclick="appendtodisplay('*')">*</button>
 
 
   <!-- Modulus -->
@@ -76,11 +67,20 @@
 </div>
 
     
+
+    <div class="operator">
+      <button onclick="appendtodisplay('+')">+</button>
+      <button onclick="appendtodisplay('-')">-</button>
+      <button onclick="appendtodisplay('/')">/</button>
+      <button onclick="appendtodisplay('*')">*</button>
+      <button onclick="appendtodisplay('.')">.</button>
+      <button onclick="squareRoot()">√</button>
+      <button onclick="decimalToFraction()">a/b</button>  
     </div>
 
   </div>
 
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
