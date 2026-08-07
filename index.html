@@ -9,7 +9,7 @@
 <body>
 
   <div id="calculator">
-
+    <div class="keys-wrapper">
     <div id="keys">
 
       <button onclick="appendtodisplay('0')">0</button>
@@ -26,10 +26,47 @@
       <button onclick="appendtodisplay('2')">2</button>
       <button onclick="appendtodisplay('8')">8</button>
       <button onclick="appendtodisplay('5')">5</button>
-
+      </div>
+      <!-- Simultaneous equation (2 unknowns) panel — overlays the keys grid -->
+      <div id="sim-panel">
+        <h3>Solve for x, y</h3>
+  
+        <div class="eq-row">
+          <input type="number" id="a1" value="1"><span>x +</span>
+          <input type="number" id="b1" value="1"><span>y =</span>
+          <input type="number" id="c1" value="0">
+        </div>
+  
+        <div class="eq-row">
+          <input type="number" id="a2" value="1"><span>x +</span>
+          <input type="number" id="b2" value="1"><span>y =</span>
+          <input type="number" id="c2" value="0">
+        </div>
+  
+        <button class="sim-solve-btn" onclick="solveSimultaneous()">Solve</button>
+      </div>
     </div>
+  
 
     <input type="text" id="screen" value="" readonly>
+
+
+  <!-- Modulus -->
+  <button onclick="appendtodisplay('MOD')">MOD</button>
+
+  <!-- Exponential -->
+  <button onclick="appendtodisplay('^')">EXP</button>
+  <button class="combo-btn" onclick="appendtodisplay('C')">nCr</button>
+  
+  
+  <!-- <button onclick="appendtodisplay('X')">X</button> -->
+  <button class="linear-btn" onclick="toggleSimPanel()">
+    a<sub>1</sub>x + b<sub>1</sub>y = c<sub>1</sub><br>
+    a<sub>2</sub>x + b<sub>2</sub>y = c<sub>2</sub>
+  </button>
+</div>
+
+    
 
     <div class="operator">
       <button onclick="appendtodisplay('+')">+</button>

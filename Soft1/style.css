@@ -1,0 +1,149 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #7643d6;
+  line-height: 1.6;
+  background: #f4f6ff;
+}
+
+header {
+  padding: 75px 20px;
+  text-align: center;
+  color: rgb(72, 9, 219);
+  background: linear-gradient(135deg, #101a3c,#46df93, #8059dd);
+}
+
+.tag {
+  color: #dbe3ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 45px;
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+main {
+  max-width: 950px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 25px;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(30, 50, 120, 0.12);
+}
+
+h2 {
+  color: rgba(158, 255, 12, 0.467);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 4px;
+  margin-top: 8px;
+  background: #4665df;
+  border-radius: 5px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+article {
+  padding: 20px;
+  border-radius: 12px;
+  background: #f8f9ff;
+  border: 1px solid #e1e6fa;
+}
+
+h3 {
+  color: #4665df;
+}
+
+.formula {
+  padding: 12px;
+  color: #563ca8;
+  text-align: center;
+  font-weight: bold;
+  background: #f0edff;
+  border-left: 5px solid #8059dd;
+  border-radius: 7px;
+}
+
+.note {
+  padding: 15px;
+  color: #24418c;
+  background: #edf2ff;
+  border-left: 5px solid #4665df;
+  border-radius: 7px;
+}
+
+code {
+  padding: 3px 6px;
+  color: #24418c;
+  background: #e6edff;
+  border-radius: 4px;
+}
+
+/*img {
+  display:grid;
+  width: 100px;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}*/
+.image-row {
+  display: flex;
+  justify-content: center; /* centers the row */
+  align-items: center;
+  gap: 50px;               /* space between images */
+  flex-wrap: wrap;         /* moves images down on small screens */
+  margin: 30px auto;
+}
+
+.image-row img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;       /* keeps images neat */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+  text-align: center;
+  color: #64708a;
+  font-style: italic;
+}
+
+footer {
+  padding: 25px;
+  color: white;
+  text-align: center;
+  background: #101a3c;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

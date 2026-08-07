@@ -29,7 +29,7 @@ button{
   border: none;
   background-color: hsl(0, 0%, 30%);
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -62,10 +62,12 @@ button:active{
   background: #33c759;
 }
 .operator {
-    padding: 20px;
-    display: flex;
-    grid-template-columns: 7, 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px;
+  gap: 10px;
+  padding: 25px;
+  margin-bottom: 15px;
 }
 .operator-btn {
   background-color: hsl(35, 100%, 55%);
@@ -80,3 +82,82 @@ button:active{
 .operator-btn:active {
   background-color: hsl(35, 100%, 75%);
 }
+
+ .linear-btn {
+        /*grid-column: 1/-1;*/
+        background: #007bff;
+        font-size: 20px;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .linear-btn:hover{
+      background: #0056b3;
+    }
+    /* Highlight the C (combination) operator so it's visually distinct */
+    .combo-btn{
+      /* background: #8b5cf6; */
+    }
+    .combo-btn:hover{
+      background: #7c3aed;
+    }
+
+    /* Simultaneous equation panel */
+    .keys-wrapper{
+      position: relative;
+    }
+    #sim-panel{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: hsl(0, 0%, 15%);
+      color: white;
+      padding: 25px;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 8px;
+      z-index: 5;
+    }
+    #sim-panel.open{
+      display: flex;
+    }
+    #sim-panel h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: normal;
+      text-align: center;
+      color: #ccc;
+    }
+    .eq-row{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .eq-row input{
+      width: 50px;
+      height: 34px;
+      text-align: center;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #c8d8c8;
+      box-sizing: border-box;
+    }
+    .sim-solve-btn{
+      width: 100%;
+      height: 44px;
+      font-size: 18px;
+      background: #007bff;
+    }
+    .sim-solve-btn:hover{
+      background: #0056b3;
+    }
